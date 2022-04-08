@@ -1,29 +1,33 @@
 *{
   margin: 0;
   padding: 0;
-  /* box-sizing: border-box; */
+  box-sizing: border-box;
 }
+
+/* page sections */
 body {
   font-family: sans-serif;
   color: #444;
 }
 
 .container{
-  width: 700px;
+  width: 1200px;
+  margin: 0 auto;
+  position: relative;
 }
 
 .main-header {
   background-color: #f7f7f7;
   padding:20px 40px;
   margin-bottom: 60px;
-  height: 80px;
+  /* height: 80px; */
 }
 
 aside {
   background-color: #f7f7f7;
   border-top: 5px solid #1098ad;
   border-bottom: 5px solid #1098ad;
-  padding: 50px 0;
+  padding: 50px 40px;
   width: 500px;
 }
 
@@ -34,7 +38,7 @@ article{
 .post-header{
   margin-bottom: 40px;
 }
-
+/* small elements */
 h1,
 h2,
 h3 {
@@ -50,6 +54,7 @@ h1 {
 h2 {
   font-size: 40px;
   margin-bottom: 30px;
+  position: relative;
 }
 
 h3 {
@@ -61,6 +66,7 @@ h4 {
   font-size: 20px;
   text-transform: uppercase;
   text-align: center;
+  margin-bottom: 30px;
 }
 
 p {
@@ -95,6 +101,7 @@ li {
 
 .related {
   list-style: none;
+  margin-left: 0;
 }
 
 li:last-child{
@@ -138,3 +145,90 @@ a:active {
   width: 100%;
   height: auto;
 }
+
+ nav{
+  font-size: 18px;
+  /* text-align: center; */}
+
+
+nav a:link{
+  margin-right: 30px;
+  margin-top: 10px;
+  display: inline-block;
+}
+
+nav a:link:last-child{
+  margin-right: 0;
+}
+
+button{
+  font-size: 22px;
+  padding:20px;
+  cursor: pointer;
+  position: absolute;
+  bottom: 50px;
+  right: 50px;
+}
+
+h1::first-letter{
+  font-style: normal;
+  margin-right: 15px;
+}
+
+/* h3 + p::first-line{
+  color:red;
+} */
+
+h2::after{
+  content: "TOP";
+  background-color: #ffe70e;
+  color: #444;
+  font-weight: bold;
+  display: inline-block;
+  font-size: 16px;
+  padding: 5px 10px;
+  position: absolute;
+  top: -10px;
+  right: -25px;
+
+}  
+  /* Floats */
+
+  .author-img{
+    float:left;
+    margin-bottom: 20px;
+  }
+
+  .author{
+    float: left;
+    margin-left: 20px;
+    margin-top: 10px;
+  }
+/* floats en el nav */
+  h1{
+    float: left;
+  }
+
+  nav{
+    float: right;
+  }
+
+  .clearfix::after{
+    content:"";
+    clear: both;
+    display:block;
+  }
+
+  article{
+    width: 825px;
+    float: left;
+  }
+
+  aside{
+    width: 300px;
+    float: right;
+  }
+
+  footer{
+    clear: both;
+  }
