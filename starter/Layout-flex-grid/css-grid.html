@@ -40,6 +40,14 @@
         margin: 40px;
 
         /* CSS GRID */
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 300px 200px;
+        /* gap: 30px; */
+        column-gap: 10px;
+        row-gap: 40px;
+
+        display: none;
       }
 
       .container--2 {
@@ -53,6 +61,17 @@
         height: 600px;
 
         /* CSS GRID */
+        display: grid;
+        grid-template-columns: 125px 200px 125px;
+        grid-template-rows: 250px 100px;
+        /* aligning tracks inside container: distribute empaty space */
+        justify-content: center;
+        align-content: center;
+        gap: 50px;
+
+        /* Aligning items inside cells */
+        align-items: center;
+        justify-items: center;
       }
     </style>
   </head>
