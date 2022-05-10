@@ -1,3 +1,57 @@
+//setting date
+const yearEl = document.querySelector(".year");
+const currentYear = new Date().getFullYear();
+yearEl.textContent = currentYear;
+
+///////////////////////////////////////////////////////////
+//mobile nav
+const btnMobile = document.querySelector(".btn-mobile-nav");
+const headerEl = document.querySelector(".header");
+btnMobile.addEventListener("click", () => {
+  headerEl.classList.toggle("nav-open");
+});
+
+///////////////////////////////////////////////////////////
+//smooth scrolling
+const allLinks = document.querySelectorAll("a:link");
+
+allLinks.forEach((link) => {
+  link.addEventListener("click", function (e) {
+    e.preventDefault();
+    const href = link.getAttribute("href");
+    //sroll back to top
+    if (href === "#") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+    //scroll to other links
+    if (href !== "#" && href.startsWith("#")) {
+      const sectionEl = document.querySelector(href);
+      sectionEl.scrollIntoView({ behavior: "smooth" });
+    }
+
+    //close mobile nav
+    if (link.classList.contains("main-nav-link")) {
+      headerEl.classList.toggle("nav-open");
+    }
+  });
+});
+///////////////////////////////////////////////////////////
+//stiky nav
+const sectionHeroEl = document.querySelector(".section-hero");
+const observer = new IntersectionObserver(
+  function (entries) {
+    const ent = entries[0];
+    if (ent.isIntersecting === false) {
+      document.querySelector("body").classList.add("stiky");
+    }
+    if (ent.isIntersecting) {
+      document.querySelector("body").classList.remove("stiky");
+    }
+  },
+  { root: null, threshold: 0, rootMargin: "-80px" }
+);
+observer.observe(sectionHeroEl);
+
 ///////////////////////////////////////////////////////////
 // Fixing flexbox gap property missing in some Safari versions
 function checkFlexGap() {
